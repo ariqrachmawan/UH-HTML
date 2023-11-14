@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Makanan dan Minuman</title>
+</head>
+<body>
+<label for="jenisMenu">Pilih jenis menu:</label>
+<select id="jenisMenu">
+    <option value="makanan">Makanan</option>
+    <option value="minuman">Minuman</option>
+</select>
+<button onclick="tampilkanDaftarMenu()">Tampilkan Daftar Menu</button>
+
+
+<div id="hasilMenu"></div>
+
+
+<script>
+    function tampilkanDaftarMenu() {
+        var jenisMenu = document.getElementById("jenisMenu").value;
+        var hasilMenu = document.getElementById("hasilMenu");
+
+        hasilMenu.innerHTML = "";
+
+        switch (jenisMenu) {
+            case "makanan":
+                hasilMenu.innerHTML = "<p>Daftar Makanan:</p><ul><li>Mie Ayam</li><li>Bakso</li><li>Soto</li></ul>";
+                break;
+            case "minuman":
+                hasilMenu.innerHTML = "<p>Daftar Minuman:</p><ul><li>Es Milo</li><li>Es Teh</li><li>Es Jeruk</li><li>Es Campur</li></ul>";
+                break;
+            default:
+                hasilMenu.innerHTML = "<p>Pilihan tidak valid. Silahkan pilih menu yang ada.</p>";
+        }
+    }
+</script>
+
+</body>
+</html>
